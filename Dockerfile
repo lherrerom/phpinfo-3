@@ -4,3 +4,6 @@ FROM alpine
 WORKDIR /app 
 # copia de una carpeta de local
 COPY src .
+RUN apk add php
+#php index.php (cd cargamos imagen coge el binario)
+#ENTRYPOINT php
