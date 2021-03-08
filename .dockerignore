@@ -1,0 +1,5 @@
+#para evitar ir al docker engine
+**/*
+#Excepciones:
+!src
+!Dockerfile
