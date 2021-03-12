@@ -33,9 +33,9 @@ jobs:
       run: |
         set -x
         #creo imagen image
-        docker build -t terferre/phpinfo-2:testing .
+        docker build -t lherrerom/phpinfo-3:testing .
         docker swarm init
-        project=phpinfo-2
+        project=phpinfo-3
         compose=etc/swarm/manifests/${project}.yaml
         #sustituyo latest x testing y despliego con compose
         sed -i /image:/s/latest/testing/ ${compose}
@@ -65,7 +65,7 @@ jobs:
       run: |
         set -x
         #creo imagen image
-        docker build -t terferre/phpinfo-2:testing .
+        docker build -t lherrerom/phpinfo-3:testing .
         #install kubernetes en ubunto
         sudo apt-get update -y
         #sudo apt-get install -y docker.io
@@ -125,6 +125,3 @@ jobs:
           done      
                         
             
-            
-            
-
