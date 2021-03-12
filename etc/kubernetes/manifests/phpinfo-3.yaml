@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: phpinfo-2
+  name: phpinfo-3
 spec: 
   replicas: 2
   selector: 
     matchLabels:
-      app: phpinfo-2
+      app: phpinfo-3
   template: 
     metadata: 
       labels: 
-        app: phpinfo-2
+        app: phpinfo-3
     spec:
       containers: 
-      - name: phpinfo-2
-        image: terferre/phpinfo-2:latest
+      - name: phpinfo-3
+        image: lherrerom/phpinfo-3:latest
         imagePullPolicy: Always
         ports: 
         - containerPort: 8080
@@ -34,14 +34,14 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: phpinfo-2
+  name: phpinfo-3
 spec: 
   ingress:
   - ports:
     - port: 8080    
   podSelector: 
     matchLabels: 
-      app: phpinfo-2
+      app: phpinfo-3
   policyTypes: 
   - Ingress
 ---            
@@ -49,13 +49,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: phpinfo-2
+  name: phpinfo-3
 spec: 
   ports: 
   - port: 8080
     targetPort: 8080
   selector:
-    app: phpinfo-2
+    app: phpinfo-3
   # IP interna al cluster
   type: ClusterIP
 ---
