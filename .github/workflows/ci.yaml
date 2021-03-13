@@ -99,7 +99,7 @@ jobs:
         master=$( kubectl get node | grep master | awk '{ print $1 }' ) 
         kubectl taint node ${master} node-role.kubernetes.io/master:NoSchedule-
         
-        project=phpinfo-2
+        project=phpinfo-3
         compose=etc/kubernetes/manifests/${project}.yaml
         #sustituyo latest x testing y despliego con compose
         sed -i /image:/s/latest/testing/ ${compose}
